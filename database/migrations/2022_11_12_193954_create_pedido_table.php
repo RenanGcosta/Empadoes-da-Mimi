@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()         //VERIFICAR TIPOS APARTIR DO EER
     {
-        Schema::create('pedido', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->datetime('data_registro');
             $table->datetime('data_entrega');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->float('valor_total', 3,2);
 
             $table->unsignedBigInteger('id_tipo_pagamento');
-            $table->foreign('id_tipo_pagamento')->references('id')->on('tipo_pagamento')
+            $table->foreign('id_tipo_pagamento')->references('id')->on('tipo_pagamentos')
             ->onUpdate('restrict')->onDelete('restrict');
             
             $table->timestamps();   
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedido');
+        Schema::dropIfExists('pedidos');
     }
 };

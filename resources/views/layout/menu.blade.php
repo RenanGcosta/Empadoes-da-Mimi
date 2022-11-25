@@ -26,10 +26,10 @@
 
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Funcionários</a>
+                            data-bs-toggle="dropdown">Usuários</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ '/funcionarios/create' }}">Cadastrar novo</a></li>
-                            <li><a class="dropdown-item" href="{{ '/funcionarios/index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
+                            <li><a class="dropdown-item" href="{{ '/usuarios/index' }}">Listar todos</a></li>
                         </ul>
                     </li>
 

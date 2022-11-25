@@ -1,6 +1,6 @@
 @extends('layout.menu')
 
-@section('title', 'Cadastrar Funcionário')
+@section('title', 'Cadastrar Usuário')
 
 @section('bars')
     <div class="container-fluid shadow bg-white p-4">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-3">
                     <div>
                         <label for="tamanho" class="form-label fw-bold">Tamanho</label>
                         <select name="tamanho" class="form-select form-select-lg bg-light" required>
@@ -94,14 +94,14 @@
                     </div>
                 </div>
 
-                <!--
-                            <div class="col-3">
+          <!--
+                            <div class="col">
                                 <div>
                                     <button type="button" class="btn btn-primary btn-lg">
                                         <i class="bi bi-pen"></i></button>
                                 </div>
                             </div>
-                            -->
+                        -->
             </div>
 
             <div>

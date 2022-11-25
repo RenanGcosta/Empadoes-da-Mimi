@@ -4,12 +4,12 @@
 
 @section('bars')
 
-    <h1>Funcionarios Cadastrados</h1>
+    <h1>Usuários Cadastrados</h1>
 
-    <p>Número de Funcionarios ativos:</p>
+    <p>Número de Usuários ativos:</p>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
-            <input type="text" name="buscaFuncionario" class="form-control form-control-lg"
+            <input type="text" name="buscaUsuario" class="form-control form-control-lg"
                 placeholder="exemplo: Alehandro">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
