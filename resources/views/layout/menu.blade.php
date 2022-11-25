@@ -29,7 +29,7 @@
                             data-bs-toggle="dropdown">Usuários</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
-                            <li><a class="dropdown-item" href="{{ '/usuarios/index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
 
