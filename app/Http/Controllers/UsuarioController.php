@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Usuario;
 
 class UsuarioController extends Controller
 {
@@ -16,17 +16,17 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $input = $request->toArray();
-        Usuario::create($input);
+        User::create($input);
         // dd($request);
     }
 
     //SELECT
     public function index(Request $request)
     {
-        $usuarios = Usuario::where('nome', 'like', '%' .
+        $usuarios = User::where('nome', 'like', '%' .
         $request->buscaUsuario . '%')->orderby('nome', 'asc')->paginate(5);
     
-        $totalUsuarios = Usuario::all()->count();
+        $totalUsuarios = User::all()->count();
 
         return view('usuarios.index', compact('usuarios', 'totalUsuarios'));
     }

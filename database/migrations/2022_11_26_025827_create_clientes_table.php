@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empadas', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('descricao', 250);
-            $table->set('tamanho', ['P', 'G', 'M']);
-            $table->float('valor_Unitario', 2,2);
-            $table->integer('quantidade');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empadas');
+        Schema::dropIfExists('clientes');
     }
 };

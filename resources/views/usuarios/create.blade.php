@@ -28,7 +28,7 @@
                     <div class="col">
                         <div>
                             <label for="senha" class="form-label">Senha</label>
-                            <input id="password" type="password" name="senha" class="form-control form-control-lg bg-light" value=""  required>
+                            <input id="password" type="password" name="password" class="form-control form-control-lg bg-light" value=""  required>
                         </div>
                     </div>
                     <div class="col-6">

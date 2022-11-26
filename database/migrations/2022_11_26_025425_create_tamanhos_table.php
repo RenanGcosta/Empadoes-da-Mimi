@@ -13,16 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('tamanhos', function (Blueprint $table) {
             $table->id();
-            $table->String('nome', 200);
-            $table->String('logradouro', 250);
-            $table->String('cep', 8);
-            $table->String('bairro', 100);
-            $table->String('cidade', 100);
-            $table->String('telefone', 11);
-            $table->enum('sexo', ['m', 'f']);
-            $table->String('email', 180);
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('tamanhos');
     }
 };
