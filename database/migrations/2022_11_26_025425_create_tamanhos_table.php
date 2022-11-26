@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('tamanhos', function (Blueprint $table) {
             $table->id();
+            $table->set('tamanho', ['P', 'M', 'G']);
+
             $table->timestamps();
+
         });
     }
 

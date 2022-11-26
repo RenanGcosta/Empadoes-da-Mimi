@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('tipo_pagamentos', function (Blueprint $table) {
             $table->id();
+            $table->set('pagamento', ['Crédito', 'Débito', 'Dinheiro', 'Pix']);
+
             $table->timestamps();
         });
     }

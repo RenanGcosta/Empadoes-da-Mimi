@@ -12,7 +12,7 @@ class UsuarioController extends Controller
         return view('usuarios.create');
     }
 
-    //INSERT
+    //INSERT create.usuarios
     public function store(Request $request)
     {
         $input = $request->toArray();
@@ -20,14 +20,13 @@ class UsuarioController extends Controller
         // dd($request);
     }
 
-    //SELECT
+    //SELECT index.usuarios
     public function index(Request $request)
     {
-        $usuarios = User::where('nome', 'like', '%' .
-        $request->buscaUsuario . '%')->orderby('nome', 'asc')->paginate(5);
+        $users = User::where('nome', 'like', '%' .
+        $request->buscaUser . '%')->orderby('nome', 'asc')->paginate(5);
     
-        $totalUsuarios = User::all()->count();
-
-        return view('usuarios.index', compact('usuarios', 'totalUsuarios'));
+        $totalUsers = User::all()->count();
+        return view('usuarios.index', compact('users', 'totalUsers'));
     }
 }

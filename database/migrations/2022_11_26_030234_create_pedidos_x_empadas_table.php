@@ -15,6 +15,18 @@ return new class extends Migration
     {
         Schema::create('pedidos_x_empadas', function (Blueprint $table) {
             $table->id();
+            $table->integer('quantidade');
+
+            //(FK) table pedidos
+            $table->unsignedBigInteger('id_pedido');
+            $table->foreign('id_pedido')->references('id')->on('pedidos')
+            ->onUpdate('restrict')->onDelete('restrict');
+
+            //(FK) table empadas
+            $table->unsignedBigInteger('id_empada');
+            $table->foreign('id_empada')->references('id')->on('empadas')
+            ->onUpdate('restrict')->onDelete('restrict');
+
             $table->timestamps();
         });
     }
