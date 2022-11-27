@@ -13,15 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pedido_x_empada', function (Blueprint $table) {
+        Schema::create('pedidos_x_empadas', function (Blueprint $table) {
             $table->id();
+            $table->integer('quantidade');
 
-            $table->unsignedBigInteger('id_empada');
-            $table->foreign('id_empada')->references('id')->on('empada')
+            //(FK) table pedidos
+            $table->unsignedBigInteger('id_pedido');
+            $table->foreign('id_pedido')->references('id')->on('pedidos')
             ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->unsignedBigInteger('id_pedido');
-            $table->foreign('id_pedido')->references('id')->on('pedido')
+            //(FK) table empadas
+            $table->unsignedBigInteger('id_empada');
+            $table->foreign('id_empada')->references('id')->on('empadas')
             ->onUpdate('restrict')->onDelete('restrict');
 
             $table->timestamps();
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedido_x_empada');
+        Schema::dropIfExists('pedidos_x_empadas');
     }
 };

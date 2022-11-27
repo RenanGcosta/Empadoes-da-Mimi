@@ -26,10 +26,10 @@
 
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Funcionários</a>
+                            data-bs-toggle="dropdown">Usuários</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ '/funcionarios/create' }}">Cadastrar novo</a></li>
-                            <li><a class="dropdown-item" href="{{ '/funcionarios/index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
+                            <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
 
@@ -46,12 +46,12 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown">Produtos</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ '/produtos/create' }}">Cadastrar novo</a>
+                            <li><a class="dropdown-item" href="{{ route('produtos.create') }}">Cadastrar novo</a>
                             </li>
-                            <li><a class="dropdown-item" href="{{'/produtos/index'}}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('produtos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
-
+                    
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Meu Perfil</a>

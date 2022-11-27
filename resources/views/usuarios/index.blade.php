@@ -3,35 +3,33 @@
 @section('title', 'Listar Produtos')
 
 @section('bars')
-
-    <h1>Produtos Cadastrados</h1>
-    <p>Produtos Cadastrados: {{ $totalProdutos }}</p>
+    <h1>Usuários: </h1>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
-            <input type="text" name="buscaProduto" class="form-control form-control-lg"
-                placeholder="exemplo: empada de frango">
+            <input type="text" name="buscaUser" class="form-control form-control-lg" placeholder="exemplo: Alehandro">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="{{ route('produtos.index') }}" class="btn btn-white border btn-lg">Limpar</a>
+        <a href="{{ route('usuarios.index') }}" class="btn btn-white border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
                 <th>ID</th>
-                <th>Produto</th>
-                <th>Tamanho</th>
-                <th>Valor: R$</th>
+                <th>Nome</th>
+                <th>Tipo de usuário</th>
+                <th>Status</th>
                 <th width='190'>Ação</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($produtos as $produto)
+
+            @foreach ($users as $user)
                 <tr class="text-center">
-                    <td class="align-middle">{{ $produto->id }}</td>
-                    <td class="align-middle">{{ $produto->nome }}</td>
-                    <td class="align-middle">{{ $produto->tamanho->tamanho }}</td>
-                    <td class="align-middle">{{ $produto->valor }}</td>
+                    <td class="align-middle">{{ $user->id }}</td>
+                    <td class="align-middle">{{ $user->nome }}</td>
+                    <td class="align-middle">{{ $user->tipo }}</td>
+                    <td class="align-middle">{{ $user->status }}</td>
                     <td class="align-middle">
                         <button type="button" class="btn btn-primary m-2">
                             <i class="bi bi-pen"></i></button><button type="button" class="btn btn-danger m-2">
