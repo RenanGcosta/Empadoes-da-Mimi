@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -23,12 +24,13 @@ Route::get('produtos/create', [ProdutoController::class, 'create'])->name('produ
 Route::post('produtos', [ProdutoController::class, 'store'])->name('produtos.store');
 Route::get("produtos/", [ProdutoController::class, 'index'])->name('produtos.index');
 /*-------------------------------------------------------------------------------------------*/ 
-
+Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedidos.create');
+Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 
 
 
 Route::get('/pedidos/index', function (){ return view('pedidos.index'); });
-Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
+//Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
 
 
 Route::get('/', function (){ return view('dashboard.index'); });

@@ -44,15 +44,9 @@
                     </div>
                 </div>
             </div>
-            <!--
-            <div class="col-md-12">
-                <label for="foto" class="form-label fs-5">Foto</label>
-                <input type="file" class="form-control form-control-lg bg-light mb-5" id="foto" name="foto">
-                <label class="input-group-text" for="inputGroupFile02">Upload</label> 
-            </div>
-            -->
+
             <button type="submit" class="btn btn-primary btn-lg col-md-2 m-2">Cadastrar</button>
-            <a href="" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
+            <a href="{{ route('produtos.create') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
     </div>
     </form>
 @endsection

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('logradouro', 250);
             $table->string('bairro', 150);
             $table->string('cidade', 100);
-            $table->string('email', 200);
+
 
             // (FK) table users
             $table->unsignedBigInteger('id_user');
