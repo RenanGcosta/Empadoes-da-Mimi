@@ -44,6 +44,14 @@
 
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Clientes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ '/clientes/index' }}">Listar todos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown">Produtos</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('produtos.create') }}">Cadastrar novo</a>
