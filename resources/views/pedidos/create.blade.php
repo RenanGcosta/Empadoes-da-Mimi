@@ -4,7 +4,7 @@
 
 @section('bars')
     <div class="container-fluid shadow bg-white p-4">
-        <h1>Novo Pedido</h1>
+        <h1>Pedido</h1>
         <form class="row g-4" method="post" action="{{ route('pedidos.store') }}" enctype="a">
             <input type="hidden" value="1" name="id_user">
             <div class="row mt-5 mb-4">

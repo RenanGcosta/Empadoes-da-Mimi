@@ -31,7 +31,7 @@
                             <input id="password" type="password" name="password" class="form-control form-control-lg bg-light" value=""  required>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col">
                         <div>
                             <label for="tipo" class="form-label">Tipo</label>
                             <select id="tipo" name="tipo" class="form-select form-select-lg bg-light" value="" required>
@@ -42,10 +42,10 @@
                         </div>
                     </div>
                 </div>
-
+           
                 <div>
                     <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
-                    <a href="##" class="btn btn-danger btn-lg">Cancelar</a>
+                    <a href="{{ route('usuarios.index') }}" class="btn btn-alert btn-lg">Cancelar</a>
                 </div>
             </div>
         </form>

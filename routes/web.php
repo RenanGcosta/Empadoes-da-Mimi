@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+Route::get('/usuarios/edit/{id}', [UsuarioController::class,'edit'])->name('usuarios.edit');
+Route::put('/usuarios/{id}', [UsuarioController::class,'update'])->name('usuarios.update');
+Route::delete('/usuarios/{id}', [UsuarioController::class,'destroy'])->name('usuarios.destroy');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
 Route::post('produtos', [ProdutoController::class, 'store'])->name('produtos.store');
@@ -26,7 +29,7 @@ Route::get("produtos/", [ProdutoController::class, 'index'])->name('produtos.ind
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedidos.create');
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
-
+Route::get('/layout/question', [PedidoController::class, 'index'])->name('question.index');
 
 
 Route::get('/pedidos/index', function (){ return view('pedidos.index'); });
