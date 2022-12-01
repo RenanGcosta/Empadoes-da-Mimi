@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->set('entrega', ['Delivery', 'Retirada']);
             $table->float('valor_total', 3, 2);
-            $table->set('status', ['Entregue', 'Cancelado', 'Em Produção', 'Saiu para Entrega']);
+            $table->enum('status', ['Em Aberto', 'Entregue', 'Cancelado', 'Em Produção', 'Saiu para Entrega',]);
             $table->string('descricao', 250);
 
             //(FK) table users

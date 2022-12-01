@@ -42,7 +42,15 @@
                             data-bs-toggle="dropdown"> Pedidos </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pedidos.create') }}">Novo Pedido</a></li>
-                            <li><a class="dropdown-item" href="{{ 'pedidos.index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Listar todos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Clientes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ '/clientes/index' }}">Listar todos</a></li>
                         </ul>
                     </li>
 
@@ -55,7 +63,13 @@
                             <li><a class="dropdown-item" href="{{ route('produtos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
-                    
+                        
+                        
+                            <li class="nav-item px-3">
+                                <a class="nav-link" href="{{ route('clientes.create') }}">teste create cliente</a>
+                            </li>
+
+
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button" data-bs-toggle="dropdown">
                             Meu Perfil</a>

@@ -32,10 +32,10 @@
                     <td class="align-middle">{{ $produto->nome }}</td>
                     <td class="align-middle">{{ $produto->tamanho->tamanho }}</td>
                     <td class="align-middle">{{ $produto->valor }}</td>
-                    <td class="align-middle">
-                        <button type="button" class="btn btn-primary m-2">
-                            <i class="bi bi-pen"></i></button><button type="button" class="btn btn-danger m-2">
-                            <i class="bi bi-trash3"></i></button>
+                    <td class="align-middle text-center">
+                        <a href="{{ route('produtos.edit', $produto->id) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                        <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $produto->id }}"><i class="bi bi-trash"></i></a>
+                        @include('produtos.delete')
                     </td>
                 </tr>
             @endforeach
