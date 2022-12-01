@@ -3,7 +3,6 @@
 @section('title', 'Cadastrar Pedido')
 
 @section('bars')
-<<<<<<< HEAD
     <div class="container shadow bg-white p-4">
         <h1>Novo Pedido</h1>
         <form class="row g-4" method="post" action="{{ route('pedidos.store') }}" enctype="a">
@@ -80,14 +79,12 @@
                 </div>
 
                 <div class="col-4">
-=======
     <div class="container-fluid shadow bg-white p-4">
         <h1>Pedido</h1>
         <form class="row g-4" method="post" action="{{ route('pedidos.store') }}" enctype="a">
             <input type="hidden" value="1" name="id">
             <div class="row mb-4 mt-5">
                 <div class="col">
->>>>>>> 1b1d97ef6d21a19bf24d5c8de8432a3e74925ac6
                     <div>
                         <label for="empada" class="form-label fw-bold">Empada</label>
                         {{-- <select name="id_empada" id="id_empada" class="form-select form-select-lg bg-light" required> --}}
