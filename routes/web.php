@@ -34,4 +34,4 @@ Route::get('/pedidos/index', function (){ return view('pedidos.index'); });
 
 
 Route::get('/', function (){ return view('dashboard.index'); });
-Route::get('/dasboard/index', function (){ return view('dashboard.index'); });
+Route::get('/dashboard/index', function (){ return view('dashboard.index'); });

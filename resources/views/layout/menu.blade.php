@@ -11,41 +11,44 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-warning bg-danger mb-4">
-        
+    
+    <nav class="navbar navbar-expand-lg mb-4" style="background-color: #ff0000" >
         <div class="container">
             <a href=""><img src="" height="30" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <img src="/images/layout/logo2.png" alt="" width="70" height="40">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ '/dasboard/index' }}">Home</a>
+                        <a class="nav-link bi bi-house text-white" href="{{ '/dashboard/index' }}"> Home </a>
                     </li>
 
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Usuários</a>
+                        <a class="nav-link dropdown-toggle text-white bi bi-people" href="#" role="button"
+                            data-bs-toggle="dropdown"> Usuários </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
                             <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
 
+
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Pedidos</a>
+                        <a class="nav-link dropdown-toggle text-white bi bi-card-checklist" href="#" role="button"
+                            data-bs-toggle="dropdown"> Pedidos </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pedidos.create') }}">Novo Pedido</a></li>
-                            <li><a class="dropdown-item" href="{{ '/pedidos/index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ 'pedidos.index' }}">Listar todos</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Produtos</a>
+                        <a class="nav-link dropdown-toggle text-white bi bi-cart" href="#" role="button"
+                            data-bs-toggle="dropdown"> Produtos </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('produtos.create') }}">Cadastrar novo</a>
                             </li>
@@ -54,22 +57,21 @@
                     </li>
                     
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button" data-bs-toggle="dropdown">
                             Meu Perfil</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="##">Editar Perfil</a></li>
-                            <li><a class="dropdown-item" href="{{ '/login/index' }}">Sair</a></li>
+                            <li><a class="dropdown-item" href="{{ 'login.index' }}">Sair</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
     <div class="container mb-3 p-4 bg-white position-relative">
         @yield('bars')
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

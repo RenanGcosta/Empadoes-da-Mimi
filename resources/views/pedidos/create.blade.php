@@ -29,7 +29,7 @@
                     <div>
 
                         <label for="nome" class="form-label fw-bold">CEP</label>
-=======
+
                         <label for="cep" class="form-label">CEP</label>
 
                         <input type="text" name="cep" class="form-control form-control-lg bg-light" value=""
