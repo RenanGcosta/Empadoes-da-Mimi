@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ '/dasboard/index' }}">Home</a>
+                        <a class="nav-link" href="{{ '/dashboard/index' }}">Home</a>
                     </li>
 
                     <li class="nav-item px-3 dropdown">
@@ -38,7 +38,7 @@
                             data-bs-toggle="dropdown">Pedidos</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pedidos.create') }}">Novo Pedido</a></li>
-                            <li><a class="dropdown-item" href="{{ '/pedidos/index' }}">Listar todos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
 
@@ -59,7 +59,13 @@
                             <li><a class="dropdown-item" href="{{ route('produtos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
-                    
+                        
+                        
+                            <li class="nav-item px-3">
+                                <a class="nav-link" href="{{ route('clientes.create') }}">teste create cliente</a>
+                            </li>
+
+
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Meu Perfil</a>

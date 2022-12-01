@@ -1,6 +1,6 @@
 @extends('layout.menu')
 
-@section('title', 'Listar Produtos')
+@section('title', 'Listar Pedidos')
 
 @section('bars')
 

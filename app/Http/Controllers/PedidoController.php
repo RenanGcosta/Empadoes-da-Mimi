@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empada;
 use App\Models\Pedido;
+use App\Models\PedidoEmpada;
 use App\Models\Tamanho;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,18 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $input = $request->toArray();
-        Pedido::create($input);
+        $idpedido = Pedido::create($input) ;
+        foreach ($input['empadas'] as $empada){
+            $item['id_pedido'] = $idpedido;
+            $item['id_empada'] = $empada;
+            PedidoEmpada::create($item);
+        }
     }
+
+    public function index()
+    {
+        return view('pedidos.index');
+    }
+
+    
 }

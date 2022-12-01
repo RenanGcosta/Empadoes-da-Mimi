@@ -39,6 +39,7 @@ class UsuarioController extends Controller
         $user = User::find($id);
         return view('usuarios.edit', compact('user'));
     }
+
     public function update(Request $request, $id)
     {
         $input = $request->toArray();
@@ -48,8 +49,8 @@ class UsuarioController extends Controller
         $users->fill($input);
         $users->save();
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário alterado com sucesso!');
-    
     }
+    
     public function destroy($id)
     {
         $users = User::find($id);

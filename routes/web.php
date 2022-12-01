@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
@@ -26,15 +27,27 @@ Route::delete('/usuarios/{id}', [UsuarioController::class,'destroy'])->name('usu
 Route::get('produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
 Route::post('produtos', [ProdutoController::class, 'store'])->name('produtos.store');
 Route::get("produtos/", [ProdutoController::class, 'index'])->name('produtos.index');
+Route::put('produtos/{id}', [ProdutoController::class, 'update'])->name('produtos.update');
+Route::get('/produtos/edit/{id}', [ProdutoController::class, 'edit'])->name('produtos.edit');
+Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('produtos.destroy');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedidos.create');
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
-Route::get('/layout/question', [PedidoController::class, 'index'])->name('question.index');
+Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
 
 
-Route::get('/pedidos/index', function (){ return view('pedidos.index'); });
-//Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
+
+
+Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
+Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
 
 
 Route::get('/', function (){ return view('dashboard.index'); });
-Route::get('/dasboard/index', function (){ return view('dashboard.index'); });
+Route::get('/dashboard/index', function (){ return view('dashboard.index'); });
+
+
+
+
+//Route::get('/pedidos/question', [ClienteController::class, 'question'])->name('question.blade');
+//Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
+

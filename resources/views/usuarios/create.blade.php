@@ -37,7 +37,6 @@
                             <select id="tipo" name="tipo" class="form-select form-select-lg bg-light" value="" required>
                                 <option value="admin">Administrador</option>
                                 <option value="simples">Simples</option>
-                                <option value="funcionario">Funcionário</option> 
                             </select>
                         </div>
                     </div>
