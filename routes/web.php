@@ -44,10 +44,12 @@ Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.st
 
 Route::get('/', function (){ return view('dashboard.index'); });
 Route::get('/dashboard/index', function (){ return view('dashboard.index'); });
+Route::get('/dashboard/index', function (){ return view('dashboard.index'); });
 
 
 
 
 //Route::get('/pedidos/question', [ClienteController::class, 'question'])->name('question.blade');
 //Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
+
 
