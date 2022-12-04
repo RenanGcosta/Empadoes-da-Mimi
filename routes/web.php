@@ -47,6 +47,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
 Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
 Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
+Route::get('/clientes/edit/{id}', [UsuarioController::class,'edit'])->name('clientes.edit');
+Route::put('/clientes/{id}', [UsuarioController::class,'update'])->name('clientes.update');
 /*-------------------------------------------------------------------------------------------*/ 
 
 
