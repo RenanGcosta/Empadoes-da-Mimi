@@ -38,7 +38,7 @@ class UsuarioController extends Controller
         $user = User::find($id);
         return view('usuarios.edit', compact('user'));
     }
-
+    
     public function update(Request $request, $id)
     {
         $input = $request->toArray();

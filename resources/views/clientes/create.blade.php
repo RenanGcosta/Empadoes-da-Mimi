@@ -8,7 +8,7 @@
         <form class="row g-4" method="post" action="{{ route('clientes.store') }}" enctype="multipart/form-data">
             @csrf
             <input type="hidden" value="1" name="id">
-            <input type="hidden" value="2" name="id_user">
+            <input type="hidden" value="{{ auth()->user()->id }}" name="id_user">
             <div class="row mt-5 mb-4">
                 <div class="col">
                     <div>
