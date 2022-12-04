@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Empada;
+use App\Models\Pagamento;
 use App\Models\Pedido;
 use App\Models\PedidoEmpada;
 use App\Models\Tamanho;
@@ -19,7 +21,8 @@ class PedidoController extends Controller
     {
         $tamanhos = Tamanho::all()->sortBy('tamanho');
         $empadas = Empada::all()->sortBy('empada');
-        return view ('pedidos.create', compact('tamanhos', 'empadas'));
+        $pagamentos = Pagamento::all()->sortBy('pagamento');
+        return view ('pedidos.create', compact('tamanhos', 'empadas', 'pagamentos'));
     }
 
     public function store(Request $request)

@@ -16,7 +16,6 @@
                     <input type="text" class="form-control form-control-lg bg-light" name="nome"
                         required>
                 </div>
-
             </div>
 
             <div class="row mt-2 mb-4">
@@ -35,12 +34,11 @@
                             <option value="">--</option>
                             @foreach ($tamanhos as $tamanho)
                             <option value="{{ $tamanho->id }}">{{ $tamanho->tamanho }}</option>
-                            @endforeach
+                            @endforeach 
                         </select>
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary btn-lg col-md-2 m-2">Cadastrar</button>
             <a href="{{ route('produtos.index') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
     </div>

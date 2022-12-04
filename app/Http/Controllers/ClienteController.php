@@ -19,7 +19,7 @@ class ClienteController extends Controller
 
     {
         $clientes = Cliente::where('nome', 'like', '%' .
-        $request->buscaUser . '%')->orderby('nome', 'asc')->paginate(5);
+        $request->buscaCliente . '%')->orderby('nome', 'asc')->paginate(5);
         $totalClientes = Cliente::all()->count();
         return view('clientes.index', compact('clientes', 'totalClientes'));
     }
@@ -28,7 +28,7 @@ class ClienteController extends Controller
     {
         $input = $request->toArray();
         Cliente::create($input);
-        return redirect()->route('/dashboard/index')->with('sucesso', 'Usuário Cadastrado com sucesso');
+        return redirect()->route('clientes.index')->with('sucesso', 'Cliente Cadastrado com sucesso');
     }
 
     public function create()
@@ -41,10 +41,9 @@ class ClienteController extends Controller
         return view('question');
     }
     public function edit($id)
-    {
-        
-        $clientes = Cliente::find($id);
-        return view('clientes.edit', compact('clientes'));
+    { 
+        $cliente = Cliente::find($id);
+        return view('clientes.edit', compact('cliente'));
     }
 
     public function update(Request $request, $id)

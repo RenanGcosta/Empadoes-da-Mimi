@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg mb-4" style="background-color: #ff0000" >
+    <nav class="navbar navbar-expand-lg mb-4" style="background-color: #ff0000">
         <div class="container">
             <a href=""><img src="" height="30" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <img src="/images/layout/logo2.png" alt="" width="70" height="40">
                 <ul class="navbar-nav">
@@ -25,32 +25,25 @@
                         <a class="nav-link bi bi-house text-white" href="{{ route('dashboard.index') }}"> Home </a>
                     </li>
 
-                    <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-white bi bi-people" href="#" role="button"
-                            data-bs-toggle="dropdown"> Usuários </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Listar todos</a></li>
-                        </ul>
-                    </li>
+                    @can('acessar-usuarios')
+                        <li class="nav-item px-3 dropdown">
+                            <a class="nav-link dropdown-toggle text-white bi bi-people" href="#" role="button"
+                                data-bs-toggle="dropdown"> Usuários </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('usuarios.create') }}">Cadastrar novo</a></li>
+                                <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Listar todos</a></li>
+                            </ul>
+                        </li>
+                    @endcan
 
-
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-white bi bi-card-checklist" href="#" role="button"
-                            data-bs-toggle="dropdown"> Pedidos </a>
+                        <a class="nav-link dropdown-toggle text-white bi bi-card-checklist" href="#"
+                            role="button" data-bs-toggle="dropdown"> Pedidos </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('clientes.index') }}">Novo Pedido</a></li>
                             <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
-
-                <!--    <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Clientes</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ '/clientes/index' }}">Listar todos</a></li>
-                        </ul>
-                    </li>   -->
 
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle text-white bi bi-cart" href="#" role="button"
@@ -62,10 +55,12 @@
                         </ul>
                     </li>
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button"
+                            data-bs-toggle="dropdown">
                             Meu Perfil</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('usuarios.edit', auth()->user()->id) }}">Editar Perfil</a></li>
+                            <li><a class="dropdown-item" href="{{ route('usuarios.edit', auth()->user()->id) }}">Editar
+                                    Perfil</a></li>
                             <li><a class="dropdown-item" href="{{ route('login.logout') }}">Sair</a></li>
                         </ul>
                     </li>
@@ -73,7 +68,7 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="container mb-3 p-4 bg-white position-relative">
         @yield('bars')
     </div>

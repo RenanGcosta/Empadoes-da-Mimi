@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UsuarioController extends Controller
 {
     public function create()
     {
+        Gate::authorize('acessar-usuarios');
         return view('usuarios.create');
     }
 
@@ -26,7 +28,7 @@ class UsuarioController extends Controller
     //SELECT index.usuarios
     public function index(Request $request)
     {
-        
+        Gate::authorize('acessar-usuarios');
         $users = User::where('nome', 'like', '%' .
         $request->buscaUser . '%')->orderby('nome', 'asc')->paginate(5);
         $totalUsers = User::all()->count();
@@ -43,8 +45,6 @@ class UsuarioController extends Controller
     {
         $input = $request->toArray();
         $users = User::find($id);
-    
-
         $users->fill($input);
         $users->save();
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário alterado com sucesso!');

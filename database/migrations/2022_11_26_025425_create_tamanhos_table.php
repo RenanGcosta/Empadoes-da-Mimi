@@ -18,7 +18,6 @@ return new class extends Migration
             $table->set('tamanho', ['P', 'M', 'G']);
 
             $table->timestamps();
-
         });
     }
 
