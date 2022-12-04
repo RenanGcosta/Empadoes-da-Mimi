@@ -41,7 +41,6 @@
                             required>
                             <option value="admin">Administrador</option>
                             <option value="simples">Simples</option>
-                            <option value="funcionario">Funcionário</option>
                         </select>
                     </div>
                 </div>

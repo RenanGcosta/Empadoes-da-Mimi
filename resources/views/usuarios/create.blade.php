@@ -7,8 +7,8 @@
         <h1>Cadastrar Usuário</h1>
         <form class="row g-4" method="post" action="{{ route('usuarios.store') }}" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" value="1" name="id">
-            <input type="hidden" value="ON" name="status">
+            {{-- <input type="hidden" value="1" name="id"> --}}
+            {{-- <input type="hidden" value="ON" name="status"> --}}
             <div class="row mt-5 mb-4">
                 <div class="col">
                     <div>

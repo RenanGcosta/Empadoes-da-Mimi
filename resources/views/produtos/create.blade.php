@@ -16,11 +16,7 @@
                     <input type="text" class="form-control form-control-lg bg-light" name="nome"
                         required>
                 </div>
-                <div class="col mb-4">
-                    <label for="nome" class="form-label fs-5 fs-5">Descrição</label>
-                    <input type="text" class="form-control form-control-lg bg-light" name="descricao"
-                        required>
-                </div>
+
             </div>
 
             <div class="row mt-2 mb-4">
@@ -46,7 +42,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg col-md-2 m-2">Cadastrar</button>
-            <a href="{{ route('produtos.create') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
+            <a href="{{ route('produtos.index') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
     </div>
     </form>
 @endsection

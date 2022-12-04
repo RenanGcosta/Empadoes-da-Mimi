@@ -18,6 +18,8 @@ class ProdutoController extends Controller
     {
         $input = $request->toArray();
         Empada::create($input);
+
+        return redirect()->route('produtos.index')->with('sucesso', 'Produto Cadastrado com sucesso');
     }
 
     public function index(Request $request)

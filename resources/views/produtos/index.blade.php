@@ -6,11 +6,13 @@
 
     <h1>Produtos Cadastrados</h1>
     <p>Produtos Cadastrados: {{ $totalProdutos }}</p>
+    @if (Session::get('sucesso'))
+        <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
+    @endif
     <a href="{{ route('produtos.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
-            <input type="text" name="buscaProduto" class="form-control form-control-lg"
-                placeholder="exemplo: empada de frango">
+            <input type="text" name="buscaProduto" class="form-control form-control-lg" placeholder="exemplo: empada de frango">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
         <a href="{{ route('produtos.index') }}" class="btn btn-white border btn-lg">Limpar</a>

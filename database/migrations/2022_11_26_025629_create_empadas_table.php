@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('empadas', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 200);
-            $table->string('descricao', 250);
+            //$table->string('descricao', 250);
             $table->string('foto');
             $table->decimal('valor', 18, 2);
 

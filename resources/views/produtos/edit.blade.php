@@ -16,11 +16,6 @@
                     <input type="text" name="nome" value="{{ $empada->nome }}"
                         class="form-control form-control-lg bg-light" required>
                 </div>
-                <div class="col mb-4">
-                    <label for="nome" class="form-label fs-5 fs-5">Descrição</label>
-                    <input type="text" name="descricao" value="{{ $empada->descricao }}"
-                        class="form-control form-control-lg bg-light" required>
-                </div>
             </div>
 
             <div class="row mt-2 mb-4">

@@ -38,18 +38,21 @@ Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
 
 /*-------------------------------------------------------------------------------------------*/ 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
+Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
 Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
 Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
+/*-------------------------------------------------------------------------------------------*/ 
+
 
 
 
  
-Route::get('/', function (){ return view('dashboard.index'); });
+//Route::get('/', function (){ return view('dashboard.index'); });
 
 
 
