@@ -24,15 +24,22 @@ class LoginController extends Controller
                 'email.required' => 'O campo e-mail é obrigatório',
                 'email.email' => 'O email informado não é válido',
                 'password.required' => 'O campo senha é obrigatório',
-            ]);
+            ]
+        );
 
-
-        if(Auth::attempt($credenciais))
-        {
+        if (Auth::attempt($credenciais)) {
             $request->session()->regenerate();
             return redirect()->intended(route('dashboard.index'));
-        }else{
+        } else {
             return redirect()->back()->with('erro', 'Email ou senha inválida');
         }
+    }
+    
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login.index');
     }
 }

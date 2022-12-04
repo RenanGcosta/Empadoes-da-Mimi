@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('clientes.index');
@@ -18,7 +23,6 @@ class ClienteController extends Controller
     {
         $input = $request->toArray();
         Cliente::create($input);
-
         return redirect()->route('/dashboard/index')->with('sucesso', 'Usuário Cadastrado com sucesso');
     }
 

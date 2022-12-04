@@ -67,7 +67,7 @@
                             Meu Perfil</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="##">Editar Perfil</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login.index') }}">Sair</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login.logout') }}">Sair</a></li>
                         </ul>
                     </li>
                 </ul>

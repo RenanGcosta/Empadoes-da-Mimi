@@ -28,11 +28,11 @@
             @csrf
             <div class="col-12">
                 <label for="email" class="form-label fs-5 fs-5">E-mail</label>
-                <input class="bg-light form-control form-control-lg" id="email" name="email">
+                <input type="email" class="bg-light form-control form-control-lg" id="email" name="email">
             </div>
             <div class="col-12">
                 <label for="password" class="form-label fs-5 fs-5">Senha</label>
-                <input class="bg-light form-control form-control-lg" id="password" name="password">
+                <input type="password" class="bg-light form-control form-control-lg" id="password" name="password">
             </div>
             <div class="col-12 d-grid">
                 <button type="submit" class="btn btn-primary btn-lg">Entrar</button>

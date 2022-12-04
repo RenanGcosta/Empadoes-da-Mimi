@@ -40,6 +40,7 @@ Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index'
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
 Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 /*-------------------------------------------------------------------------------------------*/ 
@@ -54,10 +55,5 @@ Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.ind
  
 //Route::get('/', function (){ return view('dashboard.index'); });
 
-
-
-
 //Route::get('/pedidos/question', [ClienteController::class, 'question'])->name('question.blade');
 //Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
-
-

@@ -17,8 +17,8 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $input = $request->toArray();
+        $input['password'] = bcrypt($input['password']);
         User::create($input);
-
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário Cadastrado com sucesso');
         // dd($request);
     }
@@ -26,16 +26,15 @@ class UsuarioController extends Controller
     //SELECT index.usuarios
     public function index(Request $request)
     {
+        
         $users = User::where('nome', 'like', '%' .
         $request->buscaUser . '%')->orderby('nome', 'asc')->paginate(5);
-    
         $totalUsers = User::all()->count();
         return view('usuarios.index', compact('users', 'totalUsers'));
     }
 
     public function edit($id)
     {
-        
         $user = User::find($id);
         return view('usuarios.edit', compact('user'));
     }

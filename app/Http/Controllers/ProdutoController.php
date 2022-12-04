@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller                   
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create()
     {
         $tamanhos = Tamanho::all()->sortBy('tamanho');      //table->model->create
