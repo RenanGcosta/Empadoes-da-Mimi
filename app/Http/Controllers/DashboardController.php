@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Empada;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,6 +15,8 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard.index');
+        $totalProdutos = Empada::all()->count();
+
+        return view('dashboard.index', compact('totalProdutos'));
     }
 }

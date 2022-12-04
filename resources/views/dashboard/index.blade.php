@@ -13,7 +13,7 @@
                   <div class="card h-100">
                     <img src="/images/layout/pedidos.png" class="card-img-top" alt="...">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Número de pedidos semanal</h5>
+                    <p class="card-title">Empadas:</p>
                       <p class="card-text">Exibir dados</p>
                     </div>
                     <div class="card-footer" style="background-color: #c90303">
