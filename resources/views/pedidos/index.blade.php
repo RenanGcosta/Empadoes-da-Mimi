@@ -4,9 +4,9 @@
 
 @section('bars')
 
-    <h1>Pedidos</h1>
+    <h1>Todos os Pedidos</h1>
 
-    <p>Total de pedidos do dia:</p>
+    <p>Pedidos:</p>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaPedido" class="form-control form-control-lg"
@@ -19,8 +19,8 @@
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
-                <th>ID</th>
                 <th>Código do Pedido</th>
+                <th>Nome do Cliente</th>
                 <th>Status</th>
                 <th width='190'>Ação</th>
             </tr>

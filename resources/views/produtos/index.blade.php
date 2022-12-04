@@ -6,6 +6,7 @@
 
     <h1>Produtos Cadastrados</h1>
     <p>Produtos Cadastrados: {{ $totalProdutos }}</p>
+    <a href="{{ route('produtos.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaProduto" class="form-control form-control-lg"

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
@@ -35,16 +37,19 @@ Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedido
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
 
-
-
-
+/*-------------------------------------------------------------------------------------------*/ 
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+/*-------------------------------------------------------------------------------------------*/ 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+/*-------------------------------------------------------------------------------------------*/ 
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
 Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
+Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
 
 
+
+ 
 Route::get('/', function (){ return view('dashboard.index'); });
-Route::get('/dashboard/index', function (){ return view('dashboard.index'); });
-Route::get('/dashboard/index', function (){ return view('dashboard.index'); });
 
 
 

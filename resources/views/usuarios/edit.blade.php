@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit" class="btn btn-danger btn-lg">Cadastrar</button>
+                <button type="submit" class="btn btn-danger btn-lg">Atualizar</button>
                 <a href="{{ route('usuarios.index') }}" class="btn btn-success btn-lg">Cancelar</a>
             </div>
     </div>

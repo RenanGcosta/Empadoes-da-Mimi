@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
 </head>
 
 <body>
-    
     <nav class="navbar navbar-expand-lg mb-4" style="background-color: #ff0000" >
         <div class="container">
             <a href=""><img src="" height="30" alt=""></a>
@@ -24,7 +22,7 @@
                 <img src="/images/layout/logo2.png" alt="" width="70" height="40">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                        <a class="nav-link bi bi-house text-white" href="{{ '/dashboard/index' }}"> Home </a>
+                        <a class="nav-link bi bi-house text-white" href="{{ route('dashboard.index') }}"> Home </a>
                     </li>
 
                     <li class="nav-item px-3 dropdown">
@@ -41,18 +39,18 @@
                         <a class="nav-link dropdown-toggle text-white bi bi-card-checklist" href="#" role="button"
                             data-bs-toggle="dropdown"> Pedidos </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('pedidos.create') }}">Novo Pedido</a></li>
+                            <li><a class="dropdown-item" href="{{ route('clientes.index') }}">Novo Pedido</a></li>
                             <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Listar todos</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item px-3 dropdown">
+                <!--    <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown">Clientes</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ '/clientes/index' }}">Listar todos</a></li>
                         </ul>
-                    </li>
+                    </li>   -->
 
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle text-white bi bi-cart" href="#" role="button"
@@ -64,18 +62,12 @@
                         </ul>
                     </li>
                         
-                        
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="{{ route('clientes.create') }}">teste create cliente</a>
-                            </li>
-
-
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button" data-bs-toggle="dropdown">
                             Meu Perfil</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="##">Editar Perfil</a></li>
-                            <li><a class="dropdown-item" href="{{ 'login.index' }}">Sair</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login.index') }}">Sair</a></li>
                         </ul>
                     </li>
                 </ul>
