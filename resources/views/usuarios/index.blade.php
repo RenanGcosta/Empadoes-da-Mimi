@@ -22,7 +22,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Tipo de usuário</th>
-                <th>Status</th>
+                <th>Email</th>
                 <th width='190'>Ação</th>
             </tr>
         </thead>
@@ -32,7 +32,8 @@
                     <td class="align-middle">{{ $user->id }}</td>
                     <td class="align-middle">{{ $user->nome }}</td>
                     <td class="align-middle">{{ $user->tipo }}</td>
-                    <td class="align-middle">{{ $user->status }}</td>
+                    <td class="align-middle">{{ $user->email }}</td>
+                    {{-- <td class="align-middle">{{ $user->status }}</td> --}}
                     <td class="align-middle text-center">
                             <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
                             <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $user->id }}"><i class="bi bi-trash"></i></a>

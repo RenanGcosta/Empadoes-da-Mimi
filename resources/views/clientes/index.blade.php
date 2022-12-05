@@ -6,8 +6,9 @@
 
     <h1>Buscar Cliente</h1>
 
-    <p>Total de Clientes Cadastrados:  {{ $totalClientes }}</p>
-    <a href="{{ route('clientes.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-file-earmark-person"></i></a>
+    <p>Total de Clientes Cadastrados: {{ $totalClientes }}</p>
+    <a href="{{ route('clientes.create') }}" title="Cadastrar Novo Cliente" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i
+            class="bi bi-file-earmark-person"></i></a>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaCliente" class="form-control form-control-lg" placeholder="Alehandro">
@@ -28,15 +29,26 @@
 
         <tbody>
             @foreach ($clientes as $cliente)
-            <tr class="text-center">
-                <td class="align-middle">{{ $cliente->id }}</td>
-                <td class="align-middle">{{ $cliente->nome }}</td>
-                <td class="align-middle">{{ $cliente->telefone }}</td>
-                <td class="align-middle">
-                    <a href="{{ route('pedidos.create') }}" class="btn btn-success" title="Fazer Pedido" ><i class="bi bi-basket2"></i></a>
-                    <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>    
-                </td>
-            </tr>
+                <tr class="text-center">
+                    <td class="align-middle">{{ $cliente->id }}</td>
+                    <td class="align-middle">{{ $cliente->nome }}</td>
+                    <td class="align-middle">{{ $cliente->telefone }}</td>
+                    <td class="align-middle">
+                        <div class="row">
+
+                            <div class="col">
+                                <a href="{{ route('pedidos.create') }}" class="btn btn-success" title="Fazer Pedido"><i
+                                        class="bi bi-basket2"> Fazer Pedido</i></a>
+                            </div>
+
+                            <div class="col">
+                                <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary"
+                                    title="Editar"><i class="bi bi-pen"> Editar Cliente</i></a>
+                            </div>
+                            
+                        </div>
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>

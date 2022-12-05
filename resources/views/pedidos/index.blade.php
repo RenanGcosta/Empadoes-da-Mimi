@@ -5,15 +5,14 @@
 @section('bars')
 
     <h1>Todos os Pedidos</h1>
-
-    <p>Pedidos:</p>
+    {{-- <p>Pedidos:</p> --}}
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaPedido" class="form-control form-control-lg"
                 placeholder="pesquisar código do pedido">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="##" class="btn btn-white border btn-lg">Limpar</a>
+        <a href="##" class="btn btn-light border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">
@@ -33,9 +32,7 @@
                 <td class="align-middle">Em preparação</td>
 
                 <td class="align-middle">
-                    <button type="button" class="btn btn-danger m-2">
-                        <i class="bi bi-pen"></i></button>
-                     
+                    <button type="button" class="btn btn-danger m-2"> <i class="bi bi-pen"> Editar Status</i></button>
                 </td>
             </tr>
         </tbody>

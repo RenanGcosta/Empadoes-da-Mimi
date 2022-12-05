@@ -63,7 +63,7 @@
 
             <div>
                 <button type="submit" class="btn btn-primary btn-lg">Avançar</button>
-                <a href="##" class="btn btn-danger btn-lg">Cancelar</a>
+                <a href="{{ route('clientes.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
             </div>
     </div>
     </form>

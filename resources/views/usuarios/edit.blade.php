@@ -34,6 +34,7 @@
                             value="" required>
                     </div>
                 </div>
+                @can('acessar-usuarios')
                 <div class="col">
                     <div>
                         <label for="tipo" class="form-label">Tipo</label>
@@ -44,10 +45,11 @@
                         </select>
                     </div>
                 </div>
+                @endcan
             </div>
             <div>
-                <button type="submit" class="btn btn-danger btn-lg">Atualizar</button>
-                <a href="{{ route('usuarios.index') }}" class="btn btn-success btn-lg">Cancelar</a>
+                <button type="submit" class="btn btn-success btn-lg">Atualizar</button>
+                <a href="{{ route('usuarios.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
             </div>
     </div>
     </form>

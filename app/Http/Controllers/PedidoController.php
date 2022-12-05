@@ -41,5 +41,18 @@ class PedidoController extends Controller
         return view('pedidos.index');
     }
 
-    
+    public function edit($id)
+    {
+        $pedido = Pedido::find($id);
+        return view('pedidos.edit', compact('pedido'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $input = $request->toArray();
+        $pedido = Pedido::find($id);
+        $pedido->fill($input);
+        $pedido->save();
+        return redirect()->route('pedidos.index')->with('sucesso', 'Status Alterado com Sucesso!');
+    }
 }
