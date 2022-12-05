@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Cliente;
 use App\Models\Pagamento;
 use App\Models\Pedido;
@@ -13,7 +12,6 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function index()
     {
         $totalPedidos = Pedido::all()->count();

@@ -36,10 +36,7 @@ class ClienteController extends Controller
         return view('clientes.create');
     }
 
-    public function question()
-    {
-        return view('question');
-    }
+
     public function edit($id)
     { 
         $cliente = Cliente::find($id);

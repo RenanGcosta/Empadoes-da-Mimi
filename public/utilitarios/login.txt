@@ -1,0 +1,4 @@
+INSERT INTO DB.users (nome, email, password, tipo, created_at, updated_at)
+VALUES ('master', 'master@email.com', '$2y$10$IFRVH0.rUGzyKFPTX/z7kuSxbm4bq1eSQXh3GS20CEO7DN09oUVDm', 'admin', '2022-11-23 21:34:44', '2022-11-23 21:34:44');
+
+DB: NOME DO SEU BANCO DE DADOS

@@ -57,5 +57,3 @@ Route::put('/clientes/{id}', [ClienteController::class,'update'])->name('cliente
  
 //Route::get('/', function (){ return view('dashboard.index'); });
 
-//Route::get('/pedidos/question', [ClienteController::class, 'question'])->name('question.blade');
-//Route::get('/pedidos/create', function (){ return view('pedidos.create'); });
