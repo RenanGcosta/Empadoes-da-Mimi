@@ -44,7 +44,7 @@
            
                 <div>
                     <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
-                    <a href="{{ route('usuarios.index') }}" class="btn btn-alert btn-lg">Cancelar</a>
+                    <a href="{{ route('usuarios.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
                 </div>
             </div>
         </form>
