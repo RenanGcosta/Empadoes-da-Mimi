@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css ">
 </head>
 
-<body class="bg-primary">
+<body class="bg-danger">
     <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
         <img src="/images/layout/logo.png" alt="mimi" height="100" class="d-block mx-auto mb-4">
 
@@ -24,7 +24,7 @@
         @endforeach
         @endif
 
-        <form class="row g-4" action="{{ route('login.auth') }}" method="post">
+        <form class="row g-4 text-center" action="{{ route('login.auth') }}" method="post">
             @csrf
             <div class="col-12">
                 <label for="email" class="form-label fs-5 fs-5">E-mail</label>
@@ -35,7 +35,7 @@
                 <input type="password" class="bg-light form-control form-control-lg" id="password" name="password">
             </div>
             <div class="col-12 d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                <button type="submit" class="btn btn-danger btn-lg">Entrar</button>
             </div>
         </form>
     </div>

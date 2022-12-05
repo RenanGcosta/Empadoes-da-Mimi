@@ -33,7 +33,7 @@
                 <td class="align-middle">Em preparação</td>
 
                 <td class="align-middle">
-                    <button type="button" class="btn btn-primary m-2">
+                    <button type="button" class="btn btn-danger m-2">
                         <i class="bi bi-pen"></i></button>
                      
                 </td>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg mb-4" style="background-color: #ff0000">
+    <nav class="navbar navbar-expand-lg mb-4" style="background: -webkit-gradient(linear, left top, right top, from(#9b0000), to(#f76969)) no-repeat;">
         <div class="container">
             <a href=""><img src="" height="30" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -69,7 +69,7 @@
         </div>
     </nav>
 
-    <div class="container mb-3 p-4 bg-white position-relative">
+    <div class="container mb-3 p-4 position-relative"  style="background-color: #dddddd">
         @yield('bars')
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
