@@ -12,25 +12,32 @@
             <input type="hidden" value="{{ $cliente->id }}" name="id_cliente">
             {{-- <input type="hidden" value="" name="valor_total"> --}}
             <div class="row mb-4 mt-5">
-                <div class="col">
-                    <div>
-                        <label for="empada" class="form-label fw-bold">Empada</label>
-
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr class="text-center">
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Tamanho</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @foreach ($empadas as $empada)
-                            <div>
-                            <input type="checkbox" name="empada{{ $empada->id }}" value="{{ $empada->id }}"> {{ $empada->nome }} {{ $empada->tamanho->tamanho }} 
-                               QTD: <input type="text" value="" name="quantidade{{ $empada->id }}"> 
-                            </div>
+                            <tr class="text-center">
+                                <td class="align-middle">{{ $empada->id }}</td>
+                                <td class="align-middle">{{ $empada->nome }}</td>
+                                <td class="align-middle">{{ $empada->tamanho->tamanho}}</td>
+                                <td class="align-middle"> <input type="number" style="width:50px;" value="" name="quantidade{{ $empada->id }}"> </td>
+                                {{-- <td class="align-middle">{{ $user->status }}</td> --}}        
+                            </tr>
                         @endforeach
-
-                    </div>
-                </div>
-
+                    </tbody>
+                </table>
 
             </div>
 
             <div class="row mb-4">
-                <div class="col-5">
+                <div class="col-4">
                     <div>
                         <label for="entrega" class="form-label fw-bold">Tipo de Entrega</label>
                         <select name="entrega" class="form-select form-select-lg bg-light" required>
@@ -51,12 +58,18 @@
                 </div>
 
                 <div class="col">
-                    <div>
-                        <label for="descricao" class="form-label fw-bold">Descrição</label>
-                        <input type="text" name="descricao" class="form-control form-control-lg bg-light" value=""
-                            required>
+
+                    <label for="tamanho" class="form-label fw-bold">Pagamento</label>
+                    <select name="id_pagamento" id="id_pagamento" class="form-select form-select-lg bg-light" required>
+                        <option value="">--</option>
+                        @foreach ($pagamentos as $pagamento)
+                            <option value="{{ $pagamento->id }}">{{ $pagamento->pagamento }}</option>
+                        @endforeach
+                    </select>
+        
                     </div>
-                </div>
+
+
             </div>
 
             {{-- <div class="col">
@@ -66,15 +79,6 @@
                         required>
                 </div>
             </div> --}}
-
-            <label for="tamanho" class="form-label fw-bold">Pagamento</label>
-            <select name="id_pagamento" id="id_pagamento" class="form-select form-select-lg bg-light" required>
-                <option value="">--</option>
-                @foreach ($pagamentos as $pagamento)
-                    <option value="{{ $pagamento->id }}">{{ $pagamento->pagamento }}</option>
-                @endforeach
-            </select>
-
 
             <div>
                 <button type="submit" class="btn btn-primary btn-lg">Fazer Pedido</button>
