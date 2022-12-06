@@ -13,7 +13,7 @@
             <input type="text" name="buscaUser" class="form-control form-control-lg" placeholder="exemplo: Alehandro">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="{{ route('usuarios.index') }}" class="btn btn-white border btn-lg">Limpar</a>
+        <a href="{{ route('usuarios.index') }}" class="btn btn-light border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">

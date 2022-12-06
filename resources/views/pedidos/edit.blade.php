@@ -5,28 +5,36 @@
 @section('bars')
     <div class="container-fluid shadow bg-white p-4">
         <h1>Pedido</h1>
-        <p>Cliente: {{ $cliente->nome }}</p>
         <form class="row g-4" method="post" action="{{ route('pedidos.store') }}" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" value="{{ auth()->user()->id }}" name="id_user">
+            <input type="hidden" value= "{{ auth()->user()->id }}" name="id_user">
+
             <input type="hidden" value="{{ $cliente->id }}" name="id_cliente">
-            {{-- <input type="hidden" value="" name="valor_total"> --}}
+            
             <div class="row mb-4 mt-5">
                 <div class="col">
                     <div>
                         <label for="empada" class="form-label fw-bold">Empada</label>
-
+                        {{-- <select name="id_empada" id="id_empada" class="form-select form-select-lg bg-light" required> --}}
                         @foreach ($empadas as $empada)
-                            <div>
-                            <input type="checkbox" name="empada{{ $empada->id }}" value="{{ $empada->id }}"> {{ $empada->nome }} {{ $empada->tamanho->tamanho }} 
-                               QTD: <input type="text" value="" name="quantidade{{ $empada->id }}"> 
-                            </div>
+                            <input type="checkbox" name="empadas[]" value="{{ $empada->id }}"> {{ $empada->nome }} <br>
+                            {{-- <option value="{{ $empada->id }}">{{ $empada->nome }}</option> --}}
                         @endforeach
-
+                        {{-- </select>    --}}
                     </div>
                 </div>
 
-
+                <div class="col-4">
+                    <div>
+                        <label for="tamanho" class="form-label fw-bold">Tamanho</label>
+                        <select name="id_tamanho" id="id_tamanho" class="form-select form-select-lg bg-light" required>
+                            <option value="">--</option>
+                            @foreach ($tamanhos as $tamanho)
+                                <option value="{{ $tamanho->id }}">{{ $tamanho->tamanho }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <div class="row mb-4">
@@ -41,15 +49,6 @@
                     </div>
                 </div>
 
-
-                <div class="col">
-                    <div>
-                        <label for="descricao" class="form-label fw-bold">Descrição</label>
-                        <input type="text" name="descricao" class="form-control form-control-lg bg-light" value=""
-                            required>
-                    </div>
-                </div>
-
                 <div class="col">
                     <div>
                         <label for="descricao" class="form-label fw-bold">Descrição</label>
@@ -59,13 +58,13 @@
                 </div>
             </div>
 
-            {{-- <div class="col">
+            <div class="col">
                 <div>
                     <label for="descricao" class="form-label">Valor</label>
                     <input type="text" name="valor_total" class="form-control form-control-lg bg-light" value=""
                         required>
                 </div>
-            </div> --}}
+            </div>
 
             <label for="tamanho" class="form-label fw-bold">Pagamento</label>
             <select name="id_pagamento" id="id_pagamento" class="form-select form-select-lg bg-light" required>
@@ -78,7 +77,7 @@
 
             <div>
                 <button type="submit" class="btn btn-primary btn-lg">Fazer Pedido</button>
-                <a href="{{ route('clientes.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
+                <a href="{{ route('clientes.index')}}" class="btn btn-danger btn-lg">Cancelar</a>
             </div>
     </div>
     </form>

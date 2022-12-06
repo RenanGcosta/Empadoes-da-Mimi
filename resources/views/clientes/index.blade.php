@@ -14,7 +14,7 @@
             <input type="text" name="buscaCliente" class="form-control form-control-lg" placeholder="Alehandro">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="{{ route('clientes.index') }}" class="btn btn-white border btn-lg">Limpar</a>
+        <a href="{{ route('clientes.index') }}" class="btn btn-light border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">
@@ -35,9 +35,8 @@
                     <td class="align-middle">{{ $cliente->telefone }}</td>
                     <td class="align-middle">
                         <div class="row">
-
                             <div class="col">
-                                <a href="{{ route('pedidos.create') }}" class="btn btn-success" title="Fazer Pedido"><i
+                                <a href="{{ route('pedidos.create', $cliente->id) }}" class="btn btn-success" title="Fazer Pedido"><i
                                         class="bi bi-basket2"> Fazer Pedido</i></a>
                             </div>
 
@@ -45,7 +44,6 @@
                                 <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary"
                                     title="Editar"><i class="bi bi-pen"> Editar Cliente</i></a>
                             </div>
-                            
                         </div>
                     </td>
                 </tr>

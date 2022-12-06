@@ -8,7 +8,6 @@
         <form class="row g-4" method="post" action="{{ route('usuarios.update', $user->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <input type="hidden" value='1' name="id">
             <div class="row mt-5 mb-4">
                 <div class="col">
                     <div>

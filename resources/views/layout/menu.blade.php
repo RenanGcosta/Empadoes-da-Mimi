@@ -57,7 +57,7 @@
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle text-white bi bi-person" href="#" role="button"
                             data-bs-toggle="dropdown">
-                            Meu Perfil</a>
+                            Olá {{ auth()->user()->nome }}</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('usuarios.edit', auth()->user()->id) }}">Editar
                                     Perfil</a></li>

@@ -33,7 +33,7 @@ Route::put('produtos/{id}', [ProdutoController::class, 'update'])->name('produto
 Route::get('/produtos/edit/{id}', [ProdutoController::class, 'edit'])->name('produtos.edit');
 Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('produtos.destroy');
 /*-------------------------------------------------------------------------------------------*/ 
-Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedidos.create');
+Route::get('/pedidos/create/{id}', [PedidoController::class, 'create'])->name('pedidos.create');
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
 
@@ -51,7 +51,7 @@ Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clie
 Route::put('/clientes/{id}', [ClienteController::class,'update'])->name('clientes.update');
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
-Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.uptdate');
+Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
 
 
 

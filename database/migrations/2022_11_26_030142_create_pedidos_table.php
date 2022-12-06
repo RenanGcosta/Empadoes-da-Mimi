@@ -36,9 +36,9 @@ return new class extends Migration
                 ->onUpdate('restrict')->onDelete('restrict');
 
             //(FK) table empadas
-            $table->unsignedBigInteger('id_empada');
-            $table->foreign('id_empada')->references('id')->on('empadas')
-                ->onUpdate('restrict')->onDelete('restrict');
+            // $table->unsignedBigInteger('id_empada');
+            // $table->foreign('id_empada')->references('id')->on('empadas')
+            //     ->onUpdate('restrict')->onDelete('restrict');
 
             $table->timestamps();
         });

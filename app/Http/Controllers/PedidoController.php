@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Cliente;
 use App\Models\Empada;
 use App\Models\Pagamento;
 use App\Models\Pedido;
@@ -17,23 +17,38 @@ class PedidoController extends Controller
         $this->middleware('auth');
     }
 
-    public function create()
+    public function create($id_cliente)
     {
         $tamanhos = Tamanho::all()->sortBy('tamanho');
         $empadas = Empada::all()->sortBy('empada');
         $pagamentos = Pagamento::all()->sortBy('pagamento');
-        return view ('pedidos.create', compact('tamanhos', 'empadas', 'pagamentos'));
+        $cliente = Cliente::find($id_cliente);
+        return view ('pedidos.create', compact('tamanhos', 'empadas', 'pagamentos', 'cliente'));
     }
 
     public function store(Request $request)
     {
         $input = $request->toArray();
-        $idpedido = Pedido::create($input) ;
-        foreach ($input['empadas'] as $empada){
-            $item['id_pedido'] = $idpedido;
-            $item['id_empada'] = $empada;
-            PedidoEmpada::create($item);
+        $empadas = Empada::all();
+        $input['valor_total'] = 0;
+        foreach ($empadas as $empada){
+            if(isset($input['empada'.$empada->id])){
+                $total = $input['quantidade'.$empada->id] * $empada->valor;
+                $input['valor_total'] = $input['valor_total'] + $total;
+            }
         }
+
+        $idpedido = Pedido::create($input);
+       
+        foreach ($empadas as $empada){
+            if(isset($input['empada'.$empada->id])){
+                $item['id_pedido'] = $idpedido->id;
+                $item['id_empada'] = $empada->id;
+                $item['quantidade'] = $input['quantidade'.$empada->id];
+                PedidoEmpada::create($item);
+            }
+        }
+        return redirect()->route('pedidos.index')->with('sucesso', 'Pedido cadatrado com Sucesso!');
     }
 
     public function index()
@@ -43,6 +58,7 @@ class PedidoController extends Controller
 
     public function edit($id)
     {
+
         $pedido = Pedido::find($id);
         return view('pedidos.edit', compact('pedido'));
     }

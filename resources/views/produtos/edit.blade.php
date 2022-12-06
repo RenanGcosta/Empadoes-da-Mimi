@@ -8,7 +8,6 @@
         <form class="row d-4" method="post" action="{{ route('produtos.update', $empada->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <input type="hidden" value="1" name="id">
             <input type="hidden" value="a" name="foto">
             <div class="row">
                 <div class="col mb-4">
