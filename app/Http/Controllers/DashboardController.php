@@ -12,11 +12,14 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
-        $totalPedidos = Pedido::all()->count();
+       $mes = Pedido::whereMonth('created_at', '')->count();
+      // $mes =  Pedido::havingBetween('created_at', [1, 30])->count();
+        $status = Pedido::where('status', 'like', 'Em Aberto')->count();
         $totalPagamentos = Pagamento::all()->count();
         $totalClientes = Cliente::all()->count();
-        return view('dashboard.index', compact('totalPedidos', 'totalPagamentos', 'totalClientes'));
+        return view('dashboard.index', compact('status', 'totalPagamentos', 'totalClientes', 'mes'));
     }
 }
