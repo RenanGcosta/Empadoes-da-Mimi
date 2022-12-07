@@ -14,4 +14,15 @@ class PedidoEmpada extends Model
     protected $fillable = [
         'id_pedido', 'id_empada', 'quantidade'
     ];
+
+    public function idEmpada()
+    {
+        return $this->belongsTo(Empada::class, 'id_empada');
+    }
+
+    public function idPedido()
+    {
+        return $this->belongsTo(Pedido::class, 'id_pedido');
+    }
+
 }

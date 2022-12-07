@@ -4,8 +4,11 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PedidoEmpadaController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\Pedido;
+use App\Models\PedidoEmpada;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +55,10 @@ Route::put('/clientes/{id}', [ClienteController::class,'update'])->name('cliente
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
 Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
+
+
+
+
 
 
 

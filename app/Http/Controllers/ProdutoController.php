@@ -46,8 +46,8 @@ class ProdutoController extends Controller
     public function edit($id)
     {
         $empada = Empada::find($id);
-        $tamanhos = Tamanho::all()->sortBy('tamanho');
-        return view('produtos.edit', compact('empada', 'tamanhos'));
+       // $tamanhos = Tamanho::all()->sortBy('tamanho');
+        return view('produtos.edit', compact('empada'));
     }
 
     public function destroy($id)
@@ -61,9 +61,6 @@ class ProdutoController extends Controller
     {
         $input = $request->toArray();
         $empada = Empada::find($id);
-    
-
-        
         $empada->fill($input);
         $empada->save();
         return redirect()->route('produtos.index')->with('sucesso', 'Usuário alterado com sucesso!');

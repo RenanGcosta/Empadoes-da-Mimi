@@ -4,7 +4,7 @@
 
 @section('bars')
     <div class="container-fluid shadow bg-white p-4 rounded">
-        <h1 class="mb-5">Alterar dados do cliente</h1>
+        <h1 class="mb-5">Editar dados do Cliente</h1>
         <form class="row g-4" method="post" action="{{ route('clientes.update', $cliente->id) }}"
             enctype="multipart/form-data">
             @csrf
@@ -49,9 +49,6 @@
                         <input type="text" name="bairro" class="form-control form-control-lg bg-light"
                          value="{{ $cliente->bairro }}" required>
                 </div>
-
-                
-
                     </div>
             <div>
                 <button type="submit" class="btn btn-warning btn-lg">Atualizar</button>

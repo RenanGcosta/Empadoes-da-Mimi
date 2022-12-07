@@ -51,17 +51,22 @@ class PedidoController extends Controller
         return redirect()->route('pedidos.index')->with('sucesso', 'Pedido cadatrado com Sucesso!');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('pedidos.index');
+        $pedidos = Pedido::where('id', 'like', '%' . $request->buscaPedido . '%')->orderby('id', 'asc')->paginate(30);
+        $totalPedidos = Pedido::all()->count();
+        return view('pedidos.index', compact('pedidos', 'totalPedidos'));
     }
+
 
     public function edit($id)
     {
 
+       // $pedido = Pedido::find($id);
         $pedido = Pedido::find($id);
         return view('pedidos.edit', compact('pedido'));
     }
+
 
     public function update(Request $request, $id)
     {
