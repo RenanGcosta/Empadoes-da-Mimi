@@ -10,9 +10,9 @@
         <div class="input-group me-3">
             <input type="text" name="buscaPedido" class="form-control form-control-lg"
                 placeholder="pesquisar código do pedido">
-            <button class="btn btn-primary" type="submit">Procurar</button>
+            <button class="btn btn-warning" type="submit">Procurar</button>
         </div>
-        <a href="##" class="btn btn-light border btn-lg">Limpar</a>
+        <a href="##" class="btn btn-danger border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">
