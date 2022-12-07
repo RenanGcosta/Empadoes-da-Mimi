@@ -3,7 +3,7 @@
 @section('title', 'Alterar Usuário')
 
 @section('bars')
-    <div class="container-fluid shadow bg-white p-4">
+    <div class="container-fluid shadow bg-white p-4 rounded">
         <h1 class="mb-5">Alterar Usuário</h1>
         <form class="row g-4" method="post" action="{{ route('usuarios.update', $user->id) }}" enctype="multipart/form-data">
             @csrf
@@ -47,7 +47,7 @@
                 @endcan
             </div>
             <div>
-                <button type="submit" class="btn btn-success btn-lg">Atualizar</button>
+                <button type="submit" class="btn btn-warning btn-lg">Atualizar</button>
                 <a href="{{ route('usuarios.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
             </div>
     </div>

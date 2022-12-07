@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Empadões da Mimi - Login</title>
-    <link rel="icon" href="/images/layout/icon.png">
+    <link rel="icon" href="/images/layout/icone.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css ">
 </head>
 
-<body class="bg-danger">
-    <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
+<body background="/images/layout/login.jpg">
+    <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle rounded">
         <img src="/images/layout/logo.png" alt="mimi" height="100" class="d-block mx-auto mb-4">
 
         @if (Session::get('erro'))

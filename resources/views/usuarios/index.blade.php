@@ -7,13 +7,13 @@
     @if(Session::get('sucesso'))
         <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
     @endif
-    <a href="{{ route('usuarios.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    <a href="{{ route('usuarios.create') }}" class="btn btn-warning position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaUser" class="form-control form-control-lg" placeholder="exemplo: Alehandro">
-            <button class="btn btn-primary" type="submit">Procurar</button>
+            <button class="btn btn-warning" type="submit">Procurar</button>
         </div>
-        <a href="{{ route('usuarios.index') }}" class="btn btn-light border btn-lg">Limpar</a>
+        <a href="{{ route('usuarios.index') }}" class="btn btn-danger border btn-lg">Limpar</a>
     </form>
 
     <table class="table table-striped">
@@ -35,7 +35,7 @@
                     <td class="align-middle">{{ $user->email }}</td>
                     {{-- <td class="align-middle">{{ $user->status }}</td> --}}
                     <td class="align-middle text-center">
-                            <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                            <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-warning" title="Editar"><i class="bi bi-pen"></i></a>
                             <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $user->id }}"><i class="bi bi-trash"></i></a>
                             @include('usuarios.delete')
                         </td>         

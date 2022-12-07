@@ -3,7 +3,7 @@
 @section('title', 'Cadastrar Empadas')
 
 @section('bars')
-    <div class="container-fluid shadow bg-white p-4">
+    <div class="container-fluid shadow bg-white p-4 rounded">
         <h1 class="mb-3">Cadastrar Empada</h1>
         <form class="row d-4" method="post" action="{{ route('produtos.store') }}" enctype="multipart/form-data">
             @csrf
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg col-md-2 m-2">Cadastrar</button>
+            <button type="submit" class="btn btn-warning btn-lg col-md-2 m-2">Cadastrar</button>
             <a href="{{ route('produtos.index') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>
     </div>
     </form>

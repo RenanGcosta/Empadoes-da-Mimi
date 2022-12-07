@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+    <link rel="icon" href="/images/layout/icone.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
 </head>
@@ -69,7 +70,7 @@
         </div>
     </nav>
 
-    <div class="container mb-3 p-4 position-relative"  style="background-color: #dddddd">
+    <div class="container mb-3 p-4 position-relative rounded"  style="background-color: #dddddd">
         @yield('bars')
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
