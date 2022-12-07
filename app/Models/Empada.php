@@ -13,7 +13,7 @@ class Empada extends Model
         'nome', 'descricao', 'valor', 'id_tamanho', 'foto'
     ];
 
-    public function tamanho()
+    public function idTamanho()
     {
         return $this->belongsTo(Tamanho::class, 'id_tamanho');
     }

@@ -53,8 +53,11 @@ Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.ind
 Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clientes.edit');
 Route::put('/clientes/{id}', [ClienteController::class,'update'])->name('clientes.update');
 /*-------------------------------------------------------------------------------------------*/ 
-Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
-Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
+// Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
+// Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
+
+Route::get('/pedidos/edit/{id}', [PedidoEmpadaController::class, 'edit'])->name('pedidos.edit');
+Route::put('/pedidos/{id}', [PedidoEmpadaController::class, 'update'])->name('pedidos.update');
 
 
 
