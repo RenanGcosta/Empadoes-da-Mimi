@@ -5,11 +5,9 @@
 @section('bars')
 
         <body style="background-color: #dddddd">
-          
         <img src="/images/layout/logo2.png" alt="mimi" height="150" class="rounded mx-auto d-block">
-
         <br><br><br><br>
-
+        
         <div class="row row-cols-1 row-cols-md-3 g-4 mybackground">
                 <div class="col">
                   <div class="card h-100">

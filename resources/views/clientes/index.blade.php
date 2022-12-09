@@ -5,7 +5,6 @@
 @section('bars')
 
     <h1>Buscar Cliente</h1>
-
     <p>Total de Clientes Cadastrados: {{ $totalClientes }}</p>
     <a href="{{ route('clientes.create') }}" title="Cadastrar Novo Cliente" class="btn btn-warning position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i
             class="bi bi-file-earmark-person"></i></a>
@@ -39,7 +38,6 @@
                                 <a href="{{ route('pedidos.create', $cliente->id) }}" class="btn btn-warning" title="Fazer Pedido"><i
                                         class="bi bi-basket2"> Fazer Pedido</i></a>
                             </div>
-
                             <div class="col">
                                 <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-danger"
                                     title="Editar"><i class="bi bi-pen"> Editar Cliente</i></a>

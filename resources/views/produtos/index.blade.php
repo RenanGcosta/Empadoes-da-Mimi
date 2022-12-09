@@ -33,7 +33,7 @@
                 <tr class="text-center">
                     <td class="align-middle">{{ $produto->id }}</td>
                     <td class="align-middle">{{ $produto->nome }}</td>
-                    <td class="align-middle">{{ $produto->tamanho->tamanho }}</td>
+                    <td class="align-middle">{{ $produto->idTamanho->tamanho }}</td>
                     <td class="align-middle">{{ $produto->valor }}</td>
                     <td class="align-middle text-center">
                         <a href="{{ route('produtos.edit', $produto->id) }}" class="btn btn-warning" title="Editar"><i class="bi bi-pen"></i></a>

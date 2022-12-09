@@ -6,7 +6,6 @@ use App\Models\Cliente;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-
 class ClienteController extends Controller
 {
 
@@ -35,7 +34,6 @@ class ClienteController extends Controller
     {
         return view('clientes.create');
     }
-
 
     public function edit($id)
     { 

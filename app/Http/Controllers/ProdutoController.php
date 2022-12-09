@@ -41,7 +41,6 @@ class ProdutoController extends Controller
         $totalProdutos = Empada::where('id_tamanho', $id)->count();
         return view('produtos.index', compact('tamanho', 'produtos', 'totalProdutos'));
     }
-    
 
     public function edit($id)
     {
@@ -64,6 +63,5 @@ class ProdutoController extends Controller
         $empada->fill($input);
         $empada->save();
         return redirect()->route('produtos.index')->with('sucesso', 'Usuário alterado com sucesso!');
-    
     }
 }

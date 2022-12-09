@@ -16,7 +16,6 @@
                         class="form-control form-control-lg bg-light" required>
                 </div>
             </div>
-
             <div class="row mt-2 mb-4">
                 <div class="col">
                     <div>
@@ -25,19 +24,6 @@
                             class="form-control form-control-lg bg-light" value="" required>
                     </div>
                 </div>
-
-          {{-- <div class="col"> 
-                    <div>
-                        <label for="tamanho" class="form-label fw-bold">Tamanho</label>
-                        <select id="id_tamanho" name="id_tamanho" class="form-select form-select-lg bg-light" required>
-                            <option value="">--</option>
-                            @foreach ($tamanhos as $tamanho)
-                                <option value="{{ $empada->id_tamanho }}" @selected($tamanho->id == $empada->id_empada)>
-                                    {{ $tamanho->tamanho }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                 </div>   --}}
             </div>
             <button type="submit" class="btn btn-warning btn-lg col-md-2 m-2">Cadastrar</button>
             <a href="{{ route('produtos.index') }}" class="btn btn-danger btn-lg col-md-2 m-2">Cancelar</a>

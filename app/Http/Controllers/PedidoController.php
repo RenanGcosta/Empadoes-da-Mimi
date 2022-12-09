@@ -23,7 +23,7 @@ class PedidoController extends Controller
         $empadas = Empada::all()->sortBy('empada');
         $pagamentos = Pagamento::all()->sortBy('pagamento');
         $cliente = Cliente::find($id_cliente);
-        return view ('pedidos.create', compact('tamanhos', 'empadas', 'pagamentos', 'cliente'));
+        return view('pedidos.create', compact('tamanhos', 'empadas', 'pagamentos', 'cliente'));
     }
 
     public function store(Request $request)
@@ -31,20 +31,20 @@ class PedidoController extends Controller
         $input = $request->toArray();
         $empadas = Empada::all();
         $input['valor_total'] = 0;
-        foreach ($empadas as $empada){
-            if(isset($input['empada'.$empada->id])){
-                $total = $input['quantidade'.$empada->id] * $empada->valor;
+        foreach ($empadas as $empada) {
+            if (isset($input['empada' . $empada->id])) {
+                $total = $input['quantidade' . $empada->id] * $empada->valor;
                 $input['valor_total'] = $input['valor_total'] + $total;
             }
         }
 
         $idpedido = Pedido::create($input);
-       
-        foreach ($empadas as $empada){
-            if(isset($input['empada'.$empada->id])){
+
+        foreach ($empadas as $empada) {
+            if (isset($input['empada' . $empada->id])) {
                 $item['id_pedido'] = $idpedido->id;
                 $item['id_empada'] = $empada->id;
-                $item['quantidade'] = $input['quantidade'.$empada->id];
+                $item['quantidade'] = $input['quantidade' . $empada->id];
                 PedidoEmpada::create($item);
             }
         }
@@ -58,14 +58,12 @@ class PedidoController extends Controller
         return view('pedidos.index', compact('pedidos', 'totalPedidos'));
     }
 
-
     public function edit($id)
     {
-       // $pedido = Pedido::find($id);
+        // $pedido = PedidoEmpada::find($id);
         $pedido = Pedido::find($id);
         return view('pedidos.edit', compact('pedido'));
     }
-
 
     public function update(Request $request, $id)
     {

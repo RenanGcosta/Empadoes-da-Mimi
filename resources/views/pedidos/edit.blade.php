@@ -4,8 +4,8 @@
 
 @section('bars')
     <div class="container-fluid shadow bg-white p-4 rounded">
-         <h1>Pedido: {{ $pedido->id }}</h1>
-        <p>Status atual: {{ $pedido->status }}</p> 
+        <h1>Pedido: {{ $pedido->id }}</h1>
+        <p>Status atual: {{ $pedido->status }}</p>
 
         <form class="row d-4" method="post" action="{{ route('pedidos.update', $pedido->id) }}" enctype="multipart/form-data">
             @csrf
@@ -16,7 +16,7 @@
                     <div>
                         <label for="nome" class="form-label">Nome do Cliente</label>
                         <input type="text" name="nome" class="form-control form-control-lg bg-light"
-                            value="{{ $pedido->idPedido->idCliente->nome}}" disabled>
+                            value="{{ $pedido->idPedido->idCliente->nome }}" disabled>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                     <div>
                         <label for="" class="form-label">Tipo de Entrega</label>
                         <input type="text" name="descricao" class="form-control form-control-lg bg-light"
-                            value="{{ $pedido->idPedido->entrega}}" disabled>
+                            value="{{ $pedido->idPedido->entrega }}" disabled>
                     </div>
                 </div>
                 <div class="col-4">
@@ -87,38 +87,31 @@
                             <option value="Saiu para Entrega">Saiu para Entrega</option>
                         </select>
                     </div>
-                </div> 
+                </div>
             </div>
-    <div>
-
-        <table class="table table-striped">
-            <thead class="table-dark">
-                <tr class="text-center">
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Tamanho</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-       
-                    <tr class="text-center">
-                        {{-- <td class="align-middle">{{ $ped->id }}</td> --}}
-                        <td class="align-middle">{{ $pedido->id }}</td>
-                        <td class="align-middle">{{ $pedido->idEmpada->nome }}</td>
-                        <td class="align-middle">{{ $pedido->idEmpada->idTamanho->tamanho }}</td> 
-                        <td class="align-middle">{{ $pedido->quantidade }}</td>
-                        {{-- <td class="align-middle">{{ }}</td> --}}
-                        {{-- <td class="align-middle"> <input type="number" style="width:50px;" value="" name="quantidade{{ $pedido->id }}"> </td> --}}
-                        {{-- <td class="align-middle">{{ $user->status }}</td> --}}        
-                    </tr>
-
-            </tbody>
-        </table>
-
-        <button type="submit" class="btn btn-warning btn-lg">Alterar Status</button>
-        <a href="{{ route('pedidos.index') }}" class="btn btn-danger btn-lg">Voltar</a>
-    </div>
+            
+            <div>
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr class="text-center">
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Tamanho</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td class="align-middle">{{ $pedido->id }}</td>
+                            <td class="align-middle">{{ $pedido->idEmpada->nome }}</td>
+                            <td class="align-middle">{{ $pedido->idEmpada->idTamanho->tamanho }}</td>
+                            <td class="align-middle">{{ $pedido->quantidade }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-warning btn-lg">Alterar Status</button>
+                <a href="{{ route('pedidos.index') }}" class="btn btn-danger btn-lg">Voltar</a>
+            </div>
     </div>
     </form>
 @endsection

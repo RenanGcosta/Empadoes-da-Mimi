@@ -17,7 +17,6 @@
                             required>
                     </div>
                 </div>
-
                 <div class="col-4">
                     <div>
                         <label for="telefone" class="form-label">Telefone</label>
@@ -25,7 +24,6 @@
                             placeholder="(DDD) XXXXX-XXXX" required>
                     </div>
                 </div>
-
                 <div class="col-3">
                     <div>
                         <label for="cep" class="form-label">CEP</label>
@@ -43,7 +41,6 @@
                             required>
                     </div>
                 </div>
-
                 <div class="col-4">
                     <div>
                         <label for="bairro" class="form-label">Bairro</label>
@@ -51,7 +48,6 @@
                             required>
                     </div>
                 </div>
-
                 <div class="col-3">
                     <div>
                         <label for="cidade" class="form-label">Cidade</label>

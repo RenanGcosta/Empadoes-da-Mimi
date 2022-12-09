@@ -69,7 +69,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container mb-3 p-4 position-relative rounded"  style="background-color: #dddddd">
         @yield('bars')
     </div>

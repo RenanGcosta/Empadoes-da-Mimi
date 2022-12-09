@@ -4,10 +4,11 @@
 
 @section('bars')
     <h1>Usuários: </h1>
-    @if(Session::get('sucesso'))
+    @if (Session::get('sucesso'))
         <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
     @endif
-    <a href="{{ route('usuarios.create') }}" class="btn btn-warning position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    <a href="{{ route('usuarios.create') }}" class="btn btn-warning position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i
+            class="bi bi-plus"></i></a>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaUser" class="form-control form-control-lg" placeholder="exemplo: Alehandro">
@@ -33,14 +34,15 @@
                     <td class="align-middle">{{ $user->nome }}</td>
                     <td class="align-middle">{{ $user->tipo }}</td>
                     <td class="align-middle">{{ $user->email }}</td>
-                    {{-- <td class="align-middle">{{ $user->status }}</td> --}}
                     <td class="align-middle text-center">
-                            <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-warning" title="Editar"><i class="bi bi-pen"></i></a>
-                            <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $user->id }}"><i class="bi bi-trash"></i></a>
-                            @include('usuarios.delete')
-                        </td>         
+                        <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-warning" title="Editar"><i
+                                class="bi bi-pen"></i></a>
+                        <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal"
+                            data-bs-target="#modal-deletar-{{ $user->id }}"><i class="bi bi-trash"></i></a>
+                        @include('usuarios.delete')
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-@endsection 
+@endsection

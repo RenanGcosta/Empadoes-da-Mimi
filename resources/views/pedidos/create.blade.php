@@ -26,14 +26,13 @@
                             <tr class="text-center">
                                 <td class="align-middle">{{ $empada->id }}</td>
                                 <td class="align-middle">{{ $empada->nome }}</td>
-                                <td class="align-middle">{{ $empada->tamanho->tamanho}}</td>
-                                <td class="align-middle"> <input type="number" style="width:50px;" value="" name="quantidade{{ $empada->id }}"> </td>
-                                {{-- <td class="align-middle">{{ $user->status }}</td> --}}        
+                                <td class="align-middle">{{ $empada->IdTamanho->tamanho }}</td>
+                                <td class="align-middle"> <input type="number" style="width:50px;" value=""
+                                        name="quantidade{{ $empada->id }}"></td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-
             </div>
 
             <div class="row mb-4">
@@ -48,7 +47,6 @@
                     </div>
                 </div>
 
-
                 <div class="col">
                     <div>
                         <label for="descricao" class="form-label fw-bold">Descrição</label>
@@ -56,7 +54,6 @@
                             required>
                     </div>
                 </div>
-
                 <div class="col">
 
                     <label for="tamanho" class="form-label fw-bold">Pagamento</label>
@@ -66,18 +63,8 @@
                             <option value="{{ $pagamento->id }}">{{ $pagamento->pagamento }}</option>
                         @endforeach
                     </select>
-        
-                    </div>
-            </div>
-
-            {{-- <div class="col">
-                <div>
-                    <label for="descricao" class="form-label">Valor</label>
-                    <input type="text" name="valor_total" class="form-control form-control-lg bg-light" value=""
-                        required>
                 </div>
-            </div> --}}
-
+            </div>
             <div>
                 <button type="submit" class="btn btn-warning btn-lg">Fazer Pedido</button>
                 <a href="{{ route('clientes.index') }}" class="btn btn-danger btn-lg">Cancelar</a>

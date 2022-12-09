@@ -15,13 +15,13 @@
         <img src="/images/layout/logo.png" alt="mimi" height="100" class="d-block mx-auto mb-4">
 
         @if (Session::get('erro'))
-        <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
+            <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
         @endif
 
         @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            <div class="alert alert-warning text-center p-2">{{ $error }}</div>
-        @endforeach
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-warning text-center p-2">{{ $error }}</div>
+            @endforeach
         @endif
 
         <form class="row g-4 text-center" action="{{ route('login.auth') }}" method="post">

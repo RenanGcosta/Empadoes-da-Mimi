@@ -28,28 +28,27 @@
 
             <div class="row mb-4">
                 <div class="col-3">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" name="cep" class="form-control form-control-lg bg-light"
-                         value="{{ $cliente->cep }}" placeholder="48000-000" required>
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" name="cep" class="form-control form-control-lg bg-light"
+                        value="{{ $cliente->cep }}" placeholder="48000-000" required>
                 </div>
-
                 <div class="col-3">
                     <label for="cidade" class="form-label">Cidade</label>
                     <input type="text" name="cidade" class="form-control form-control-lg bg-light"
-                     value="{{ $cliente->cidade }}" required>
-                    </div>
-
-                <div class="col-3">
-                        <label for="logradouro" class="form-label">Logradouro</label>
-                        <input type="text" name="logradouro" class="form-control form-control-lg bg-light"
-                         value="{{ $cliente->logradouro }}" required>
-                </div> 
-                <div class="col-3">
-                        <label for="bairro" class="form-label">Bairro</label>
-                        <input type="text" name="bairro" class="form-control form-control-lg bg-light"
-                         value="{{ $cliente->bairro }}" required>
+                        value="{{ $cliente->cidade }}" required>
                 </div>
-                    </div>
+                <div class="col-3">
+                    <label for="logradouro" class="form-label">Logradouro</label>
+                    <input type="text" name="logradouro" class="form-control form-control-lg bg-light"
+                        value="{{ $cliente->logradouro }}" required>
+                </div>
+                <div class="col-3">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" name="bairro" class="form-control form-control-lg bg-light"
+                        value="{{ $cliente->bairro }}" required>
+                </div>
+            </div>
+            
             <div>
                 <button type="submit" class="btn btn-warning btn-lg">Atualizar</button>
                 <a href="{{ route('clientes.index') }}" class="btn btn-danger btn-lg">Cancelar</a>

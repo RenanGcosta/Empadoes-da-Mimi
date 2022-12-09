@@ -24,7 +24,6 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário Cadastrado com sucesso');
         // dd($request);
     }
-
     //SELECT index.usuarios
     public function index(Request $request)
     {
@@ -34,7 +33,7 @@ class UsuarioController extends Controller
         $totalUsers = User::all()->count();
         return view('usuarios.index', compact('users', 'totalUsers'));
     }
-
+    
     public function edit($id)
     {
         $user = User::find($id);

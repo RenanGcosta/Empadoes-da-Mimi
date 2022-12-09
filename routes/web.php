@@ -39,6 +39,11 @@ Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('pr
 Route::get('/pedidos/create/{id}', [PedidoController::class, 'create'])->name('pedidos.create');
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
+Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
+Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
+
+// Route::get('/pedidos/edit/{id}', [PedidoEmpadaController::class, 'edit'])->name('pedidos.edit');
+// Route::put('/pedidos/{id}', [PedidoEmpadaController::class, 'update'])->name('pedidos.update');
 
 /*-------------------------------------------------------------------------------------------*/ 
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
@@ -53,18 +58,3 @@ Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.ind
 Route::get('/clientes/edit/{id}', [ClienteController::class,'edit'])->name('clientes.edit');
 Route::put('/clientes/{id}', [ClienteController::class,'update'])->name('clientes.update');
 /*-------------------------------------------------------------------------------------------*/ 
-// Route::get('/pedidos/edit/{id}', [PedidoController::class, 'edit'])->name('pedidos.edit');
-// Route::put('/pedidos/{id}', [PedidoController::class, 'update'])->name('pedidos.update');
-
-Route::get('/pedidos/edit/{id}', [PedidoEmpadaController::class, 'edit'])->name('pedidos.edit');
-Route::put('/pedidos/{id}', [PedidoEmpadaController::class, 'update'])->name('pedidos.update');
-
-
-
-
-
-
-
- 
-//Route::get('/', function (){ return view('dashboard.index'); });
-
